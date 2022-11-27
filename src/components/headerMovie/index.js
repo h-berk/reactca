@@ -6,9 +6,10 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import HomeIcon from "@mui/icons-material/Home";
 
+
 const MovieHeader = (props) => {
   const movie = props.movie;
-
+  
   return (
     <Paper 
         component="div" 
