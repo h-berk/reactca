@@ -12,14 +12,6 @@ const App = () => {
   return (
     <BrowserRouter>
     <SiteHeader />      {/* New Header  */}
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/movies/favourites">Favourites</Link>
-        </li>
-      </ul>
       <Routes>
         <Route path="/reviews/:id" element={ <MovieReviewPage /> } />
         <Route exact path="/movies/favourites" element={<FavouriteMoviesPage />} />
