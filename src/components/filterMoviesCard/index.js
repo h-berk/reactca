@@ -9,7 +9,7 @@ import TextField from "@mui/material/TextField";
 import SearchIcon from "@mui/icons-material/Search";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import img from '../../images/pexels-dziana-hasanbekava-5480827.jpg';
+import img from '../../images/movies.jpg';
 import { getGenres } from "../../api/tmdb-api";
 import { useQuery } from "react-query";
 import Spinner from '../spinner';
@@ -52,14 +52,15 @@ const formControl =
   return (
     <Card 
       sx={{
-        maxWidth: 345,
-        backgroundColor: "rgb(204, 204, 0)"
+        maxWidth: 340,
+        minHeight: 700,
+        backgroundColor: "rgb(5, 193, 255)"
       }} 
       variant="outlined">
       <CardContent>
         <Typography variant="h5" component="h1">
-          <SearchIcon fontSize="large" />
-          Filter the movies.
+          <SearchIcon fontSize="medium" />
+          Filter Movies.
         </Typography>
         <TextField
         sx={formControl}
@@ -71,7 +72,7 @@ const formControl =
         onChange={handleTextChange}
         />
         <FormControl sx={formControl}>
-          <InputLabel id="genre-label">Genre</InputLabel>
+          <InputLabel id="genre-label">Select Genre</InputLabel>
           <Select
             labelId="genre-label"
             id="genre-select"
@@ -96,8 +97,6 @@ const formControl =
       />
       <CardContent>
         <Typography variant="h5" component="h1">
-          <SearchIcon fontSize="large" />
-          Filter the movies.
           <br />
         </Typography>
       </CardContent>
