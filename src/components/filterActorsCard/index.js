@@ -3,12 +3,8 @@ import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
 import SearchIcon from "@mui/icons-material/Search";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
 import { useQuery } from "react-query";
 import Spinner from '../spinner';
 import { getActors } from "../../api/tmdb-api";
@@ -22,7 +18,7 @@ const formControl =
   };
 
   export default function FilterActorsCard(props) {
-    const { data, error, isLoading, isError } = useQuery("actors", getActors);
+    const {error, isLoading, isError } = useQuery("actors", getActors);
   
     if (isLoading) {
       return <Spinner />;
