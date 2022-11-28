@@ -17,6 +17,8 @@ function ActorListPageTemplate({ actors, title, action }) {
     if (type === "name") setNameFilter(value);
   };
 
+  console.log(title)
+  
   return (
     <Grid container sx={{ padding: '20px' }}>
       <Grid item xs={12}>

@@ -11,7 +11,6 @@ function MovieListPageTemplate({ movies, title, action }) {
 
   let displayedMovies = movies
     .filter((m) => {
-        console.log(m.title)
       return m.title.toLowerCase().search(nameFilter.toLowerCase()) !== -1;
     })
     .filter((m) => {
@@ -22,6 +21,8 @@ function MovieListPageTemplate({ movies, title, action }) {
     if (type === "name") setNameFilter(value);
     else setGenreFilter(value);
   };
+
+  console.log(title);
 
   return (
     <Grid container sx={{ padding: '20px' }}>

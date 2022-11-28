@@ -22,9 +22,11 @@ const ActorsPage = (props) => {
   const actorsFavourites = actors.filter(a => a.actorFavourite)
   localStorage.setItem('actorsFavourites', JSON.stringify(actorsFavourites))
 
+  const title = "Popular Actors";
+
   return (
     <PageTemplate
-      title="Popular Actors"
+      title= {title}
       actors={actors}
       action={(actor) => {
         return <AddToActorsFavouritesIcon actor={actor} />
