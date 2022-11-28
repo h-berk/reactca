@@ -11,6 +11,7 @@ function MovieListPageTemplate({ movies, title, action }) {
 
   let displayedMovies = movies
     .filter((m) => {
+        console.log(m.title)
       return m.title.toLowerCase().search(nameFilter.toLowerCase()) !== -1;
     })
     .filter((m) => {

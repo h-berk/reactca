@@ -7,50 +7,41 @@ import CardHeader from "@mui/material/CardHeader";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
-import CalendarIcon from "@mui/icons-material/CalendarTodayTwoTone";
-import StarRateIcon from "@mui/icons-material/StarRate";
 import Grid from "@mui/material/Grid";
 import img from '../../images/film-poster-placeholder.png';
 import { Link } from "react-router-dom";
 import Avatar from '@mui/material/Avatar';
-import { MoviesContext } from "../../contexts/moviesContext";
+import { ActorsContext } from "../../contexts/actorsContext";
 
-export default function MovieCard({ movie, action }) {
-  const { favourites, mustWatchMovies } = useContext(MoviesContext);
+export default function ActorCard({ actor, action }) {
+  const { actorsFavourites } = useContext(ActorsContext);
  
-   if (favourites.find((id) => id === movie.id)) {
-     movie.favourite = true;
+   if (actorsFavourites.find((id) => id === actor.id)) {
+     actor.actorFavourite = true;
    } else {
-     movie.favourite = false
+     actor.actorFavourite = false
    }
-
-   if (mustWatchMovies.find((id) => id === movie.id)) {
-    movie.mustWatch = true;
-  } else {
-    movie.mustWatch = false
-  }
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
         avatar={
-          movie.favourite ? (
+          actor.actorFavourite ? (
             <Avatar sx={{ backgroundColor: 'red' }}>
               <FavoriteIcon />
             </Avatar>
-          ) : movie.mustWatch ? <Avatar sx={{ backgroundColor: 'red' }}><PlaylistAddIcon /></Avatar> : null
+          ) : null
           }
         title={
           <Typography variant="h5" component="p">
-            {movie.title}{" "}
+            {actor.name}{" "}
           </Typography>
         }
       />
       <CardMedia
-        sx={{ height: 500 }}
+        sx={{ height: 450 }}
         image={
-          movie.poster_path
-            ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
+          actor.id
+            ? `https://www.themoviedb.org/t/p/w300_and_h450_bestv2/${actor.profile_path}`
             : img
         }
       />
@@ -58,21 +49,14 @@ export default function MovieCard({ movie, action }) {
         <Grid container>
           <Grid item xs={6}>
             <Typography variant="h6" component="p">
-              <CalendarIcon fontSize="small" />
-              {movie.release_date}
-            </Typography>
-          </Grid>
-          <Grid item xs={6}>
-            <Typography variant="h6" component="p">
-              <StarRateIcon fontSize="small" />
-              {"  "} {movie.vote_average}{" "}
+              {"Popularity: "} {actor.popularity}
             </Typography>
           </Grid>
         </Grid>
       </CardContent>
       <CardActions disableSpacing>
-    {action(movie)}
-    <Link to={`/movies/${movie.id}`}>
+    {action(actor)}
+    <Link to={`/actors/${actor.id}`}>
       <Button variant="outlined" size="medium" color="primary">
         More Info ...
       </Button>
