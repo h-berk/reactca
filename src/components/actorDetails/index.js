@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import Chip from "@mui/material/Chip";
+import React from "react";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 
@@ -11,10 +10,8 @@ const root = {
     padding: 1.5,
     margin: 0,
 };
-const chip = { margin: 0.5 };
 
 const ActorDetails = ({ actor }) => {  
-    const [drawerOpen, setDrawerOpen] = useState(false);
 
   return (
     <>
@@ -47,7 +44,7 @@ const ActorDetails = ({ actor }) => {
         component="ul" 
         sx={root}
       >
-        Birthplace: 
+        Birthplace:
         {actor.place_of_birth}
       </Paper>
     </>
