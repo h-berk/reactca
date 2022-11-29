@@ -9,7 +9,6 @@ function ActorListPageTemplate({ actors, title, action }) {
 
   let displayedActors = actors
     .filter((a) => {
-        console.log(a.id)
       return a.name.toLowerCase().search(nameFilter.toLowerCase()) !== -1;
     })
 
