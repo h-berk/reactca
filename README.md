@@ -47,7 +47,7 @@ New app features do not have storybook support.
 
 ### UI Design.
 
-![ ](./images/newHomePage.png)
+![ ](/images/newHomePage.png)
 
 >New redesigned home page, with changes to the site header, and filter card. 
 
