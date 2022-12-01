@@ -47,8 +47,6 @@ New app features do not have storybook support.
 
 ### UI Design.
 
-[ Insert screenshots of the __new app pages__ you developed (including modified existing pages), Have an appropriate caption for each one (see example below).
-
 ![ ](./images/newHomePage.png)
 
 >New redesigned home page, with changes to the site header, and filter card. 
