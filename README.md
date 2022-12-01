@@ -47,52 +47,52 @@ New app features do not have storybook support.
 
 ### UI Design.
 
-![ ](./images/newHomePage.png)
+![ ](/images/newHomePage.png)
 
 >New redesigned home page, with changes to the site header, and filter card. 
 
-![ ](./images/movieDetails.png)
+![ ](/images/movieDetails.png)
 
 >Shows detailed information on a movie. Clicking the 'Reviews' floating action button will display extracts from critic reviews.
 
-![ ](./images/review.png)
+![ ](/images/review.png)
 
 >Shows the full review for a movie.
 
-![ ](./images/upcomingMoviesPage.png)
+![ ](/images/upcomingMoviesPage.png)
 
 >Shows the upcoming movies, as well as ones you added to your must watch list with the playlist add icon.
 
-![ ](./images/mustWatchList.png)
+![ ](/images/mustWatchList.png)
 
 >Shows the must watch list you added upcoming movies to.
 
-![ ](./images/popularMovies.png)
+![ ](/images/popularMovies.png)
 
 >Shows a list of popular movies.
 
-![ ](./images/tvShows.png)
+![ ](/images/tvShows.png)
 
 >Shows a list of popular tv shows.
 
-![ ](./images/tvShowDetails.png)
+![ ](/images/tvShowDetails.png)
 
 >Shows detailed information on a tv show. Clicking the 'Reviews' floating action button will display extracts from critic reviews.
 
-![ ](./images/favouriteTVShows.png)
+![ ](/images/favouriteTVShows.png)
 
 >Shows a list of favourite tv shows selected by the user.
 
-![ ](./images/popularActors.png)
+![ ](/images/popularActors.png)
 
 >Shows a list of popular actors.
 
 
-![ ](./images/actorDetails.png)
+![ ](/images/actorDetails.png)
 
 >Shows detailed information on an actor.
 
-![ ](./images/favouriteActors.png)
+![ ](/images/favouriteActors.png)
 
 >Shows a list of favourite actors selected by the user.
 
