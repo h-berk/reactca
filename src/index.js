@@ -44,7 +44,7 @@ const queryClient = new QueryClient({
             <TVShowsContextProvider>
               <Routes>
             <Route path="/reviews/:id" element={ <MovieReviewPage /> } />
-            <Route path="/reviews/tvshows/:id" element={ <TVShowReviewPage /> } />
+            <Route path="/reviews/:id" element={ <TVShowReviewPage /> } />
             <Route exact path="/movies/favourites" element={<FavouriteMoviesPage />} />
             <Route exact path="/actors/favourites" element={<FavouriteActorsPage />} />
             <Route exact path="/tvshows/favourites" element={<FavouriteTVShowsPage />} />

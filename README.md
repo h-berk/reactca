@@ -1,24 +1,113 @@
-# React CA - Extension of Movie App Labs
-React CA for Web App Dev 2 - Hasan Berk 20093361
+# Web App Dev 2 - Assignment 1 - ReactJS app.
 
-Firstly, I redid all the React Labs. I fixed any errors I previously encountered, and completed all exercises. I needed a good foundation before I added my own stuff. 
+Name: [Hasan Berk]
 
-Fixed the must watch list. You can now add upcoming movies, which are tagged when you add them to your must watch list.
+## Overview.
++ Firstly, I redid all the React Labs. I fixed any errors I previously encountered, and completed all exercises. I needed a good foundation before I added my own stuff. 
 
-Redesigned the filter card, changed the colour and image, and changed to TMDB Client title to HB Movies.
 
-New views added - Must Watch List, Popular Movies, Popular Actors, Favourite Actors.
+### New Pages.
++ List of Upcoming Movies.
++ List of Must Watch Movies.
++ List of Popular Movies.
++ List of TV Shows.
++ List of Favourite TV Shows
++ List of Popular Actors.
++ List of Favourite Actors.
 
-Actors Data Model Created.
+### New Features.
+ 
++ Can add upcoming movies to your must watch list. Once added, they are tagged with a playlist icon.
++ Added a tv shows data model, where you can filter tv shows by name and/or genre. You can also view more information and tag them as favourites, as well as write reviews.
++ Actors data model added, Popular Actors page shows the current most popular actors, and their popularity score. You can favourite them, or see more information about them.
++ When actors are favourited, they also get tagged, and you can view them in the favourite actors page. 
++ When you want more information about an actor, it leads you to the actor details page, which has their biography, what they're known for, birthday and birthplace.
++ App has full caching support for all data models.
 
-Popular Actors page shows the current most popular actors, and their popularity score. You can favourite them, or see more information about them.
+## Setup requirements.
 
-When actors are favourited, they also get tagged, and you can view them in the favourite actors page. 
++ May need to install npm before running the app locally after cloning from Git.
 
-When you want more information about an actor, it leads you to the actor details page, which has their biography, what they're known for, birthday and birthplace. 
+## TMDB endpoints.
+##  Additional ones.
++ /tv/popular/ - popular tv shows
++ /tv/${id}/ - details of a tv show
++ /genre/tv/list/ - genres for a tv show
++ /tv/${id}/images/ - get the images for a tv show
++ /tv/${id}/reviews/ - get tv show reviews
++ /person/popular/ - get popular actors
++ /person/${id}/ - get details of an actor
++ /person/${id}/images/ - get the images of an actor
 
-Actors pages are routed with the urls /actors and /actors/:id respectively. 
+## App Design.
 
-App has full caching support.
+### Component catalogue.
 
-Filtering works for both movies and actors.
+New app features do not have storybook support.
+
+### UI Design.
+
+[ Insert screenshots of the __new app pages__ you developed (including modified existing pages), Have an appropriate caption for each one (see example below).
+
+![ ](./images/newHomePage.png)
+
+>New redesigned home page, with changes to the site header, and filter card. 
+
+![ ](./images/movieDetails.png)
+
+>Shows detailed information on a movie. Clicking the 'Reviews' floating action button will display extracts from critic reviews.
+
+![ ](./images/review.png)
+
+>Shows the full review for a movie.
+
+![ ](./images/upcomingMoviesPage.png)
+
+>Shows the upcoming movies, as well as ones you added to your must watch list with the playlist add icon.
+
+![ ](./images/mustWatchList.png)
+
+>Shows the must watch list you added upcoming movies to.
+
+![ ](./images/popularMovies.png)
+
+>Shows a list of popular movies.
+
+![ ](./images/tvShows.png)
+
+>Shows a list of popular tv shows.
+
+![ ](./images/tvShowDetails.png)
+
+>Shows detailed information on a tv show. Clicking the 'Reviews' floating action button will display extracts from critic reviews.
+
+![ ](./images/favouriteTVShows.png)
+
+>Shows a list of favourite tv shows selected by the user.
+
+![ ](./images/popularActors.png)
+
+>Shows a list of popular actors.
+
+
+![ ](./images/actorDetails.png)
+
+>Shows detailed information on an actor.
+
+![ ](./images/favouriteActors.png)
+
+>Shows a list of favourite actors selected by the user.
+
+### Routing.
+
++ /reviews/:id - The user reviews for a movie or tv show. 
++ /actors/favourites - A list of favourite actors selected by the user.
++ /tvshows/favourites - A list of favourite TV Shows selected by the user.
++ /movies/mustwatch - A list of must watch movies selected by the user.
++ /movies/popular - A list of popular movies.
++ /actors/:id - A page of an actor's details, including a biography and other information about them.
++ /actors - A list of popular actors.
++ /tvshows - A list of popular TV Shows. 
++ /tvshows/:id - A page of a chosen TV Show's details. 
++ /movies/upcoming - A list of upcoming movies.
++ /reviews/tvform - A form to submit a review for a tv show.
