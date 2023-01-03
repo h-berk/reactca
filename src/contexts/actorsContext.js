@@ -4,6 +4,7 @@ export const ActorsContext = React.createContext(null);
 
 const ActorsContextProvider = (props) => {
   const [actorsFavourites, setActorsFavourites] = useState( [] )
+  const [authenticated, setAuthenticated] = useState(false);
 
   const addToActorsFavourites = (actor) => {
     let newActorsFavourites = [...actorsFavourites];
@@ -25,6 +26,7 @@ const ActorsContextProvider = (props) => {
         actorsFavourites,
         addToActorsFavourites,
         removeFromActorsFavourites,
+        setAuthenticated,
       }}
     >
       {props.children}

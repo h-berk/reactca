@@ -1,30 +1,30 @@
 export const getMovies = () => {
-    return fetch(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&include_video=false&page=1`
-    ).then((response) => {
-      if (!response.ok) {
-        throw new Error(response.json().message);
-      }
-      return response.json();
-    })
-    .catch((error) => {
-       throw error
-    });
-  };
+  return fetch(
+     '/api/movies',{headers: {
+       'Authorization': window.localStorage.getItem('token')
+    }
+  }
+  ).then(res => res.json());
+};
 
-  export const getTVShows = () => {
-    return fetch(
-      `https://api.themoviedb.org/3/tv/popular?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
-    ).then((response) => {
-      if (!response.ok) {
-        throw new Error(response.json().message);
-      }
-      return response.json();
-    })
-    .catch((error) => {
-       throw error
-    });
-  };
+export const getTVShows = () => {
+  return fetch(
+     '/api/shows',{headers: {
+       'Authorization': window.localStorage.getItem('token')
+    }
+  }
+  ).then(res => res.json());
+};
+
+export const getActors = () => {
+  return fetch(
+     '/api/actors',{headers: {
+       'Authorization': window.localStorage.getItem('token')
+    }
+  }
+  ).then(res => res.json());
+};
+
 
 
   export const getMovie = (args) => {
@@ -176,21 +176,6 @@ export const getMovieImages = ({ queryKey }) => {
     });
   };
 
-  
-  export const getActors = () => {
-    return fetch(
-        `https://api.themoviedb.org/3/person/popular?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
-    ).then((response) => {
-      if (!response.ok) {
-        throw new Error(response.json().message);
-      }
-      return response.json();
-    })
-    .catch((error) => {
-       throw error
-    });
-  };
-
   export const getActor = (args) => {
     // console.log(args)
     const [, idPart] = args.queryKey;
@@ -223,3 +208,23 @@ export const getMovieImages = ({ queryKey }) => {
       throw error
    });
   };
+
+  export const login = (username, password) => {
+    return fetch('/api/users', {
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        method: 'post',
+        body: JSON.stringify({ username: username, password: password })
+    }).then(res => res.json())
+};
+
+export const signup = (username, password) => {
+    return fetch('/api/users?action=register', {
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        method: 'post',
+        body: JSON.stringify({ username: username, password: password })
+    }).then(res => res.json())
+};
